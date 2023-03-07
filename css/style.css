@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebebeb;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+}
+.logo {
+    height: 50px;
+}
+
+.icon {
+    font-size: 1.8rem !important;
+    padding: 0;
+    padding: 3px 5px;
+}
+.space {
+   margin:0 10px;
+}
+
+.ruffle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cont {
+    gap: 12px;
+}
+
+.index {
+    padding: 0 20px;
+    background-color: #d7d7d7;
+    border-radius: 8px;
+    color: #0f4c5c;
+    font-size: 12rem;
+}
+
+/* SIDEBAR Design */
+
+.side-logo {
+    height: 150px;
+}
+
+.sidenav {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: #0f4c5c;
+    transition: 0.3s all ease-in;
+    margin-left: 0 !important;
+    overflow-y: auto !important;
+}
+.nav-item {
+   
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 23px;
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+    background-color: #ffffff26;
+    border-radius: 23px;
+}
+
+.dropdown-menu {
+    background-color: #0f4c5c;
+}
+
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #ffffff26;
+    color: #fff;
+}
+
+.my-container {
+    margin-left: 250px !important;
+    transition: 0.3s all ease-in;
+}
+
+.active-nav {
+    margin-left: -300px !important;
+}
+
+.active-container {
+    margin-left: 0 !important;
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+/* CARDS */
+
+
+.tickets {
+    border-radius: 6px;
+    border: 1px solid #dfdfdf;
+    width: 40vh;
+    background-color: #fefefe;
+}
+
+.dashboard-board{
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px;
+    
+}
+.card-item {
+    background-color: #fff6f1 !important;
+    margin: 8px 0;
+}
+
+.ticket-generator-card {
+    width: 600px !important;
+}
+
+.border-winner {
+    border-left: 3px solid #8fe7be;
+    padding: 0 3px;
+}
+
+.numbers::-webkit-outer-spin-button,
+.numbers::-webkit-inner-spin-button {
+    display: none;
+}
+
+.ticket-hub {
+    display: flex;
+    flex-direction: row;
+    gap: 10px !important;
+}
+
+.ticket-record {
+    height: 80vh;
+    overflow-x: auto;
+}
+
+.kiosk {
+    width: 35vw !important;
+}
+
+.ticket-record {
+    width: 65vw !important;
+}
+
+#suggestion-box {
+    position: absolute;
+    max-height: 50vh !important;
+    overflow: hidden !important;
+    z-index: 999;
+
+}
+
+.ms-n5 {
+    margin-left: -40px;
+}
+
+.raffle-page {
+    display: flex;
+    flex-direction: row;
+    gap: 12px
+}
+
+.index-card {
+    width: 60vw !important;
+}
+
+.raffle-card {
+    width: 40vw !important;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    .index {
+        padding: 0 5px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        color: #0f4c5c;
+        font-size: 4rem;
+    }
+
+    .ticket-hub {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .kiosk, .ticket-record {
+        width: 100% !important;
+    }
+    
+
+
+    .sidenav {
+        margin-left: -300px;
+    }
+    .my-container{
+        margin-left: 0;
+    }
+
+    .raffle-page {
+        flex-direction: column !important;;
+    }
+    
+    .index-card, .raffle-card {
+        width: 100% !important;
+    }
+
+    .ticket-generator-card {
+        width: 100% !important;
+    }
+
+    .button-group{
+        gap: 5px !important;
+       
+    }
+    .dashboard-board{
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .tickets {
+        width: 100% !important;
+    }
+    .card-item {
+        background-color: #fff6f1 !important;
+        margin: 8px 0;
+    }
+}

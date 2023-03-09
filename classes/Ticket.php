@@ -103,6 +103,18 @@ class Ticket {
             return false;
         }
     }
+    public function sellAllTicket() {
+        try {
+            $sql = "UPDATE tickets SET payment_status = '1', date_purchased = Now() WHERE payment_status IS NULL";
+            $stmt = $this->conn->query($sql);
+
+            return $stmt->rowCount();
+
+        }catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 
 }
 

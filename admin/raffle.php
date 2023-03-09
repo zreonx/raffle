@@ -20,7 +20,7 @@
         <div class="content-holder p-3 card-body">
             <div class="card-title">Index Controller</div>
             <div class="slot-raffle">
-                <div id="index container h-100" class="d-flex">
+                <div id="index" class="d-flex container h-100">
                     <h1 class="index-number" id="first">0</h1>
                     <h1 class="index-number" id="second">0</h1>
                     <h1 class="index-number" id="third">0</h1>
@@ -133,6 +133,7 @@
                             if(winnerArray[s] == '1') {
                                     clearInterval(intervalIds[checkCounter]);
                                     $('#'+elementIds[checkCounter]).html(winnerIndex[checkCounter]);
+                                    $('#'+elementIds[checkCounter]).addClass('text-orange');
     
                                     indexStatus.push('filled');
                                    
@@ -152,6 +153,8 @@
                         for(let b = 0; b < intervalIds.length; b++) {
                             clearInterval(intervalIds[b]);
                             $('#'+elementIds[b]).html("0");
+                            $('#'+elementIds[b]).removeClass('text-orange');
+
                             $('#clear').prop("disabled", true);
                         }
                     }

@@ -1,5 +1,8 @@
 <?php require_once 'includes/header.php'; ?>
-<script src="js/confetti.js"></script>
+
+<div class="banner mx-auto">
+    <img src="images/banner.png"  class="img-fluid mt-3" style="height: 200px" alt="">
+</div>
 
 <div id="raffle">
 
@@ -10,6 +13,14 @@
     $(document).ready(function(){
         $('#raffle').load("raffle_script.php", {myRaffle: 'myRafelle'},);
     }); 
+
+    var start = () => {
+        setTimeout(function() {
+            confetti.start()
+        }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+    };
+
+    //start();
 
     function animation(){
         $.ajax({
@@ -47,7 +58,7 @@
         });
     }
 
-    
+    confetti.start();
 
     //var sec = setInterval(animation, 1000);
 

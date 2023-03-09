@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raffle</title>
-    <link rel="icon" href="../images/ccc_logo-min.png" type="image/x-icon">
+    <link rel="icon" href="../images/bsis-min.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/style.css?v1.1">
@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/placeholder-loading/dist/css/placeholder-loading.min.css">
     <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
+        //document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </head>
 <body>
-    <div class="sidenav navbar navbar-expand d-flex flex-column align-items-start sidenav" id="sidenav">
+    <div class="sidenav navbar navbar-expand d-flex flex-column align-items-start sidenav bg-primary" id="sidenav">
         <div class="d-flex justify-content-center align-items-center w-100 mt-3">
             <a href="#" class=""> 
-                <img class="side-logo" src="../images/ccc_logo-min.png" alt="logo">
+                <img class="side-logo" src="../images/bsis-min.png" alt="logo">
             </a>
         </div>
         <ul class="navbar-nav d-flex flex-column mt-2 w-100">

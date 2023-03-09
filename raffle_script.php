@@ -13,11 +13,25 @@
 
 <div class="ruffle mx-auto mt-3">
     <div id="cont" class="d-flex">
-        <h1 class="index" id="first">0</h1>
+        <!-- <h1 class="index" id="first">0</h1>
         <h1 class="index" id="second">0</h1>
         <h1 class="index" id="third">0</h1>
         <h1 class="index" id="fourth">0</h1>
-        <h1 class="index" id="fifth">0</h1>
+        <h1 class="index" id="fifth">0</h1> -->
+
+
+
+        <!-- <div class="index"></div>
+        <div class="index"></div>
+        <div class="index"></div>
+        <div class="index"></div>
+        <div class="index"></div> -->
+        
+        <div class="index"><h1 class="" id="first">0</h1></div>
+        <div class="index"><h1 class="" id="second">0</h1></div>
+        <div class="index"><h1 class="" id="third">0</h1></div>
+        <div class="index"><h1 class="" id="fourth">0</h1></div>
+        <div class="index"><h1 class="" id="fifth">0</h1></div>
     </div>
 </div>
 
@@ -25,6 +39,7 @@
     $(document).ready(function() {
         var elementIds = ['first', 'second', 'third', 'fourth', 'fifth'];
         var resetCounter = 0;
+        var greetings = false;
     function runRaffle() {
         var intervalIds = [];
 
@@ -88,13 +103,24 @@
                         if(winnerArray[s] == '1') {
                                 clearInterval(intervalIds[checkCounter]);
                                 $('#'+elementIds[checkCounter]).html(winnerIndex[checkCounter]);
-
+                                $('#'+elementIds[checkCounter]).addClass('text-orange');
                                 indexStatus.push('filled');
-                               
                                 checkCounter++;
                                 
                         }else {
                                 continue;
+                        }
+
+                        if(checkCounter == 5) {
+                            if (!greetings) {
+                                var scriptElement = document.createElement("script");
+                                scriptElement.src = "js/confetti.js";
+                                // Append the script element to the head or body element
+                                $("head").append(scriptElement);
+                                $(".banner").after("<h1 class='display-1 fs-1 text-center mt-3'>Congratulations!</h1>");
+                                greetings = true;
+                                confetti.start();
+                            }
                         }
                     }
      
@@ -104,6 +130,7 @@
                     for(let b = 0; b < intervalIds.length; b++) {
                         clearInterval(intervalIds[b]);
                         $('#'+elementIds[b]).html("0");
+                        $('#'+elementIds[b]).removeClass('text-orange');
                     }
                 }
             },

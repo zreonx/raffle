@@ -18,45 +18,38 @@ class User {
             if($query->rowCount() > 0) {
                 $result = $query->fetch(PDO::FETCH_ASSOC);
             }else{
-                $result = $username;
+                $result = false;
             }
 
             return $result;
                         
         }catch(PDOException $e){
             echo "Error: " . $e->getMessage();
+            return false;
         }
     }
 
-    public function login($username, $password) {
-        try{
+    // public function login(String $username, $password) {
+    //     try{
             
-            $emailInfo = $this->checkEmail($username);
-
-            password_verify($password, $emailInfo['password']);
-
-            if(password_verify($password, $emailInfo['password']) == 1) {
-                return $emailInfo;
-            }else{
-                return false;
-            }
 
 
-            // $sql = "SELECT * FROM users WHERE username = :username AND password = :password ;  ";
-            // $stmt = $this->conn->prepare($sql);
+    //         // $sql = "SELECT * FROM users WHERE username = :username AND password = :password ;  ";
+    //         // $stmt = $this->conn->prepare($sql);
 
-            // $stmt->bindparam(':username', $username);
-            // $stmt->bindparam(':password', $password);
-            // $stmt->execute();
-            // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    //         // $stmt->bindparam(':username', $username);
+    //         // $stmt->bindparam(':password', $password);
+    //         // $stmt->execute();
+    //         // $result = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            // return $result;
+    //         // return $result;
 
             
-        }catch(PDOException $e){
-            echo "Error: " . $e->getMessage();
-        }
+    //     }catch(PDOException $e){
+    //         echo "Error: " . $e->getMessage();
+            
+    //     }
         
-    }
+    // }
 
 }

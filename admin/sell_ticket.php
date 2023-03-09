@@ -11,6 +11,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary" name="submit" id="submit" >Sell Ticket</button>
+                <button type="button" class="btn btn-primary" id="sellall" >Sell All</button>
             </div>
 
         </form>
@@ -67,6 +68,36 @@
                         $('#error').remove();
                     }
 
+                },
+            });
+        });
+
+
+        $('#sellall').click(function() {
+            var spinner = '<div class="spinner"><div class="spinner-border spinner-border-sm" role="status"><span class="visually-hidden">Loading...</span></div> <span>Please wait</span></div>';
+            $('#sellall').html(spinner);
+            $('#sellall').prop('disabled', true);
+            $.ajax({
+                url: '../controller/sell_all.php',
+                method: 'POST',
+                data: {key: 'raffle'},
+                success: function(response){   
+                    try {
+                        var sellingJson = JSON.parse(response);
+                        $('#error').remove();
+                        console.log(sellingJson);
+                        if (sellingJson.sell_failed) {
+                            $("h1").after(sellingJson.sell_failed);
+                        }else {
+                            $("h1").after(sellingJson.sold);
+                            $('#error').remove();
+                        }
+                    }catch(e) {
+                        $('#error').remove();
+                        
+                    }
+                    $('#sellall').html("Sell All");
+                    $('#sellall').prop('disabled', false);
                 },
             });
         });
